@@ -8,9 +8,10 @@ from dotenv import load_dotenv
 
 # Criptografando a chave da API do Gemini e configurando
 #load_dotenv(override=True)
-chave_gemini = st.secrets['chave_gemini']
+os.environ['chave_gemini'] = st.secrets['chave_gemini']
+chave = os.getenv('chave_gemini')
 #chave = os.getenv("chave_api")
-genai.configure(api_key=chave_gemini)
+genai.configure(api_key=chave)
 
 # Funcao para extrair o texto do PDF
 def extract_text_from_pdf(pdf_file):
