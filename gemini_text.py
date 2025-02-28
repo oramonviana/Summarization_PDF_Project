@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 # Criptografando a chave da API do Gemini e configurando
 #load_dotenv(override=True)
-chave = st.secrets['OPENAI_API_KEY']
+chave = st.secrets['chave_gemini']
 #chave = os.getenv("chave_api")
 genai.configure(api_key=chave)
 
